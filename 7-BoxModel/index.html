@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Understanding HTML Links & CSS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="#">Home</a> |
+        <a href="#">About Us</a> |
+        <a href="#">Privacy Policy</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Understanding HTML Links</h1>
+
+      <p>
+        Hyperlinks are the backbone of the web. They allow users to navigate between pages seamlessly. Below, we explore the two main types of links:
+        <span class="inline-demo">Absolute</span> and
+        <strong>Relative</strong>.
+      </p>
+
+      <h2>1. Absolute Linking</h2>
+
+      <p>Absolute links point to a specific, full URL on the internet. They must include the protocol (like https://) and the domain name. These are typically used to link to external websites.</p>
+
+      <p><strong>Example:</strong> Learn more about web development by visiting the <a href="https://en.wikipedia.org/wiki/HTTP" target="_blank">Wikipedia page for HTTP</a>.</p>
+
+      <h2>2. Relative Linking</h2>
+
+      <p>Relative links point to a file relative to the current file's location on the same server. They do not include the protocol or domain name. These are ideal for linking pages within your own website because if you change your domain name, the links won't break.</p>
+
+      <div>
+        <strong>Examples:</strong>
+        <ul>
+          <li>Read our <a href="#">About Us</a> page to meet the team.</li>
+          <li>Check out our <a href="#">Privacy Policy</a> to see how we handle data.</li>
+        </ul>
+      </div>
+
+      <h2>3. Box Model Demo</h2>
+
+      <div class="box-content">content-box (width: 300px + padding + border)</div>
+      <div class="box-border">border-box (width: 300px includes padding + border)</div>
+
+      <span class="inline-block-demo">inline-block 1</span>
+      <span class="inline-block-demo">inline-block 2</span>
+      <span class="inline-block-demo">inline-block 3</span>
+    </main>
+  </body>
+</html>
