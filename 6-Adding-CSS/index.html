@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Understanding HTML Links & CSS</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      #main-heading {
+        color: darkblue;
+        font-family: Georgia, serif;
+        text-align: center;
+      }
+      .highlight {
+        background-color: yellow;
+        font-weight: bold;
+      }
+      p {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #333;
+      }
+      h2 {
+        background-color: lightgray;
+        padding: 8px 16px;
+        border-radius: 4px;
+      }
+      ul {
+        list-style-type: square;
+        color: #555;
+      }
+      a {
+        color: #0066cc;
+        text-decoration: underline;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .absolute-word {
+        color: red;
+        font-size: 1.2rem;
+      }
+      p strong {
+        color: green;
+        font-size: 1.2em;
+      }
+      .override {
+        color: purple;
+      }
+      .override {
+        color: orange;
+      }
+      .important-demo {
+        color: blue !important;
+      }
+      .important-demo {
+        color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="#">Home</a> |
+        <a href="#">About Us</a> |
+        <a href="#">Privacy Policy</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1 id="main-heading">Understanding HTML Links</h1>
+
+      <p>
+        Hyperlinks are the backbone of the web. They allow users to navigate between pages seamlessly. Below, we explore the two main types of links:
+        <span style="color: blue; font-weight: bold; font-size: 24px;">Absolute</span> and
+        <strong>Relative</strong>.
+      </p>
+
+      <h2>1. Absolute Linking</h2>
+
+      <p>Absolute links point to a specific, full URL on the internet. They must include the protocol (like https://) and the domain name. These are typically used to link to external websites.</p>
+
+      <p><strong>Example:</strong> Learn more about web development by visiting the <a href="https://en.wikipedia.org/wiki/HTTP" target="_blank">Wikipedia page for HTTP</a>.</p>
+
+      <h2>2. Relative Linking</h2>
+
+      <p>Relative links point to a file relative to the current file's location on the same server. They do not include the protocol or domain name. These are ideal for linking pages within your own website because if you change your domain name, the links won't break.</p>
+
+      <div>
+        <strong>Examples:</strong>
+        <ul>
+          <li>Read our <a href="#">About Us</a> page to meet the team.</li>
+          <li>Check out our <a href="#">Privacy Policy</a> to see how we handle data.</li>
+        </ul>
+      </div>
+
+      <h2>3. CSS Demonstration</h2>
+
+      <p class="highlight">This paragraph uses a class selector (.highlight) with yellow background.</p>
+
+      <p id="special-para" class="highlight">This paragraph has both an id and a class. The id style wins over the class in the cascade.</p>
+
+      <p><span class="absolute-word">This text uses a class with rem unit.</span> <strong>This text uses em unit.</strong></p>
+
+      <p class="override">This text is orange because the second .override rule overrides the first.</p>
+
+      <p class="important-demo">This text is blue because !important overrides the later pink rule.</p>
+    </main>
+  </body>
+</html>
