@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script type="application/javascript" src="script.js"></script>
+    <title>My todo list</title>
+  </head>
+  <body>
+    <div class="root-container">
+      <aside class="sidebar">
+        <div>
+          <h1>
+            <span class="material-symbols-outlined app-logo"> event_list </span>
+            <span class="app-brand"> Todo List </span>
+          </h1>
+
+          <menu class="sidebar-menu">
+            <li class="selected">
+              <button data-filter="-1">All Tasks</button>
+            </li>
+            <li><button data-filter="0">In Progress</button></li>
+            <li><button data-filter="1">Completed</button></li>
+            <li><button data-filter="2">Deleted</button></li>
+          </menu>
+        </div>
+        <footer class="page-footer">&copy; 2026 - Herald</footer>
+      </aside>
+      <main>
+        <header>
+          <h1>My Tasks</h1>
+          <button id="add-task-btn" class="btn btn-primary">Add Task</button>
+        </header>
+        <div id="summary-container">
+          <div class="summary-card">
+            <span id="inprogress-count" class="text-lg">10</span>
+            <br />
+            <br />
+            <span>In Progress</span>
+          </div>
+          <div class="summary-card">
+            <span id="completed-count" class="text-lg">5</span>
+            <br />
+            <br />
+            <span>Completed</span>
+          </div>
+          <div class="summary-card">
+            <span id="deleted-count" class="text-lg">2</span>
+            <br />
+            <br />
+            <span>Deleted</span>
+          </div>
+        </div>
+        <ul class="task-list">
+          <li>
+            <article class="task-card status-inprogress">
+              <header>
+                <h3 class="task-title">Lorem ipsum</h3>
+              </header>
+              <span class="text-muted text-sm">09/10/2026</span>
+              <div>
+                <span class="status-badge badge-inprogress">In Progress</span>
+              </div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+              <footer class="text-right">
+                <button class="btn btn-primary">Mark As Completed</button>
+                <button class="btn btn-secondary">Delete</button>
+              </footer>
+            </article>
+          </li>
+
+          <li>
+            <article class="task-card status-completed">
+              <header>
+                <h3 class="task-title">Lorem ipsum</h3>
+              </header>
+              <span class="text-muted text-sm">09/10/2026</span>
+              <div>
+                <span class="status-badge badge-completed">Completed</span>
+              </div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+              <footer class="text-right">
+                <button class="btn btn-secondary">Delete</button>
+              </footer>
+            </article>
+          </li>
+
+          <li>
+            <article class="task-card status-deleted">
+              <header>
+                <h3 class="task-title">Lorem ipsum</h3>
+              </header>
+              <span class="text-muted text-sm">09/10/2026</span>
+              <div>
+                <span class="status-badge badge-deleted">Deleted</span>
+              </div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+              <footer class="text-right"></footer>
+            </article>
+          </li>
+        </ul>
+      </main>
+    </div>
+    <div class="modal-overlay hidden" id="add-task-overlay">
+      <div class="modal hidden" id="add-task-modal">
+        <header>
+          <h2>Add New Task</h2>
+          <button
+            type="button"
+            class="btn-clear"
+            id="close-modal-btn"
+            aria-label="Close"
+          >
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </header>
+        <form id="add-task-form">
+          <div class="form-group">
+            <label for="task-title-input">Title</label><br />
+            <input
+              class="form-control"
+              type="text"
+              id="task-title-input"
+              name="title"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="task-deadline-input">Deadline</label><br />
+            <input
+              class="form-control"
+              type="date"
+              id="task-deadline-input"
+              name="deadline"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="task-description-input">Description</label><br />
+            <textarea
+              class="form-control"
+              id="task-description-input"
+              rows="4"
+              name="description"
+              required
+            ></textarea>
+          </div>
+
+          <footer class="text-right">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              id="cancel-add-task-btn"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary">Add Task</button>
+          </footer>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

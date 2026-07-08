@@ -1,0 +1,583 @@
+/* ==========================================================================
+   1. GLOBAL & BASE STYLES
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: hsl(39, 64%, 87%);
+  color: hsl(210, 75%, 16%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ==========================================================================
+   2. LAYOUT / CONTAINERS
+   ========================================================================== */
+
+.root-container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+main {
+  padding: 1rem 2rem;
+}
+
+main > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ==========================================================================
+   3. SIDEBAR / NAVIGATION
+   ========================================================================== */
+
+aside {
+  background-color: hsl(210, 75%, 16%);
+  min-height: 100vh;
+  color: hsl(39, 64%, 87%);
+  padding: 1rem;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Task 1: Swap icon and text using relative positioning */
+.app-logo {
+  position: relative;
+  left: 9.5rem;
+}
+
+.app-brand {
+  position: relative;
+  left: -2.5rem;
+}
+
+menu.sidebar-menu {
+  padding: 0;
+}
+
+.sidebar-menu li {
+  list-style-type: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.1rem;
+  font-size: 1rem;
+}
+
+.sidebar-menu li button {
+  background-color: transparent;
+  color: inherit;
+  font-size: 1rem;
+  border: none;
+  padding: 0;
+}
+
+.sidebar-menu li button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.sidebar-menu .selected {
+  background-color: hsl(39, 64%, 87%);
+  color: hsl(210, 75%, 16%);
+}
+
+/* Task 2: Fixed footer in bottom left corner */
+.page-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+}
+
+/* ==========================================================================
+   4. BUTTONS
+   ========================================================================== */
+
+/* Base Button */
+.btn {
+  padding: 0.5rem 1rem;
+  border: solid 1px hsl(210, 75%, 16%);
+  border-radius: 0.2rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.btn:hover {
+  border: solid 1px hsl(210, 75%, 30%);
+  cursor: pointer;
+}
+
+/* Primary Button */
+.btn-primary {
+  background-color: hsl(26, 40%, 39%);
+  border: solid 1px hsl(26, 40%, 39%);
+  color: hsl(39, 64%, 87%);
+}
+
+.btn-primary:hover {
+  background-color: hsl(26, 33%, 30%);
+  border: solid 1px hsl(26, 33%, 30%);
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(26, 40%, 39%);
+  border: solid 1px hsl(26, 40%, 39%);
+}
+
+.btn-secondary:hover {
+  background-color: hsl(0, 0%, 93%);
+  border: solid 1px hsl(26, 33%, 30%);
+}
+
+/* Clear/Icon Button */
+.btn-clear {
+  border: none;
+  background-color: transparent;
+  color: hsl(26, 40%, 39%);
+  font-size: 1.5rem;
+}
+
+.btn-clear:hover {
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   5. CARDS & LISTS (Tasks & Summaries)
+   ========================================================================== */
+
+/* Task Lists */
+.task-list {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+ul.task-list {
+  padding: 0;
+}
+
+.task-list li {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Task Cards */
+.task-card {
+  background-color: hsl(39, 60%, 95%);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.2);
+  margin: 1rem;
+}
+
+.task-card header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Task 3: positioned parent for the dropdown */
+.dropdown {
+  position: relative;
+}
+
+.task-card p {
+  max-height: 5rem;
+  min-height: 5rem;
+  overflow: hidden;
+}
+
+.task-title {
+  margin: 0.75rem 0;
+}
+
+/* Summary Cards Dashboard */
+#summary-container {
+  margin-top: 1rem;
+  display: flex;
+  width: 100%;
+}
+
+.summary-card {
+  padding: 2rem;
+  margin: 0.5rem;
+  background-color: hsl(63, 19%, 79%);
+  border-radius: 0.2rem;
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.2);
+  flex-grow: 1;
+}
+
+/* ==========================================================================
+   6. DROPDOWN MENUS
+   ========================================================================== */
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: hsl(39, 64%, 87%);
+  min-width: max-content;
+  right: 0;
+  top: 25px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content ul {
+  padding: 0;
+}
+
+.dropdown-content li {
+  padding: 0.2rem 1rem;
+  text-decoration: underline;
+}
+
+.dropdown-content li a {
+  color: hsl(210, 75%, 16%);
+}
+
+/* ==========================================================================
+   7. UTILITY CLASSES
+   ========================================================================== */
+
+.text-muted {
+  color: hsl(210, 10%, 40%);
+}
+
+.text-sm {
+  font-size: 0.75rem;
+}
+
+.text-lg {
+  font-size: 2em;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.show {
+  display: inline-block;
+}
+
+/* ==========================================================================
+   8. RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================================================== */
+
+/* --- Tablet Breakpoint --- */
+@media (max-width: 1024px) {
+  /* Task 1: Collapse sidebar into a single stacked column layout */
+  .root-container {
+    grid-template-columns: 1fr;
+  }
+
+  aside {
+    min-height: auto; /* Allow content to dictate height */
+  }
+
+  .page-footer {
+    position: static; /* Revert fixed positioning so it doesn't overlap tasks */
+    padding: 1rem 0 0 0;
+  }
+
+  /* Task 2: Horizontal navigation menu layout */
+  menu.sidebar-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  /* Task 3: Reduce task card layout from 3 columns to 2 columns */
+  .task-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- Mobile Breakpoint --- */
+@media (max-width: 640px) {
+  /* Task 3: Collapse task card layout down to a single column */
+  .task-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* Task 3 Hint Check: Stack action buttons if screen gets too tight */
+  .task-card footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .task-card footer .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Task 4: Allow summary cards dashboard to wrap vertically */
+  #summary-container {
+    flex-wrap: wrap;
+  }
+
+  .summary-card {
+    min-width: 140px; /* Ensures they drop cleanly and maintain readability */
+  }
+}
+
+/* ==========================================================================
+   9. TASK STATUS VISUAL DIFFERENTIATION
+   ========================================================================== */
+
+/* Status Left Borders & Background Tints */
+.task-card.status-inprogress {
+  border-left: 5px solid hsl(210, 75%, 16%); /* Accent Theme Blue */
+}
+
+.task-card.status-completed {
+  border-left: 5px solid #2e7d32; /* Success Green */
+  background-color: hsl(145, 30%, 97%);
+}
+
+.task-card.status-deleted {
+  border-left: 5px solid #c62828; /* Danger Red */
+  background-color: hsl(0, 30%, 97%);
+  opacity: 0.65; /* Fades out deleted tasks */
+}
+
+/* Title adjustments for completed/deleted tasks */
+.task-card.status-completed .task-title {
+  text-decoration: line-through;
+  color: hsl(210, 10%, 40%);
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+}
+
+.badge-inprogress {
+  background-color: hsl(210, 75%, 90%);
+  color: hsl(210, 75%, 16%);
+}
+
+.badge-completed {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.badge-deleted {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.task-card footer {
+  min-height: 34px;
+}
+
+/* ==========================================================================
+   10. FORMS (Add Task Modal & beyond)
+   ========================================================================== */
+
+.form-group {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  color: hsl(210, 75%, 16%);
+}
+
+.form-group .form-hint {
+  font-size: 0.75rem;
+  color: hsl(210, 10%, 40%);
+  margin-top: 0.3rem;
+}
+
+/* Base field styles shared across inputs */
+.form-control {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: hsl(210, 75%, 16%);
+  background-color: hsl(0, 0%, 100%);
+  border: solid 1px hsl(210, 20%, 70%);
+  border-radius: 0.3rem;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.form-control::placeholder {
+  color: hsl(210, 10%, 60%);
+}
+
+.form-control:hover {
+  border-color: hsl(210, 30%, 50%);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: hsl(26, 40%, 39%);
+  box-shadow: 0 0 0 3px hsla(26, 40%, 39%, 0.2);
+}
+
+.form-control:disabled {
+  background-color: hsl(39, 30%, 92%);
+  color: hsl(210, 10%, 60%);
+  cursor: not-allowed;
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 5rem;
+}
+
+/* Select needs room for a custom arrow */
+select.form-control {
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M0 0l5 6 5-6z' fill='%23153b66'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  padding-right: 2rem;
+}
+
+/* Validation states */
+.form-control.is-error {
+  border-color: #c62828;
+}
+
+.form-control.is-error:focus {
+  box-shadow: 0 0 0 3px hsla(0, 60%, 47%, 0.2);
+}
+
+.form-error-message {
+  font-size: 0.75rem;
+  color: #c62828;
+  margin-top: 0.3rem;
+}
+
+.form-control.is-success {
+  border-color: #2e7d32;
+}
+
+/* Checkbox / radio rows */
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-check input[type="checkbox"],
+.form-check input[type="radio"] {
+  width: 1rem;
+  height: 1rem;
+  accent-color: hsl(26, 40%, 39%);
+}
+
+.form-check label {
+  margin: 0;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+/* Required field marker */
+.form-required {
+  color: #c62828;
+  margin-left: 0.2rem;
+}
+
+/* Form action row (e.g. modal footer buttons) */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+/* Fieldset grouping, in case you add sectioned forms later */
+fieldset.form-section {
+  border: solid 1px hsl(210, 20%, 80%);
+  border-radius: 0.4rem;
+  padding: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+fieldset.form-section legend {
+  font-weight: 600;
+  padding: 0 0.4rem;
+  color: hsl(210, 75%, 16%);
+}
+
+/* ==========================================================================
+   11. ADD TASK MODAL (starter — feel free to expand this)
+   ========================================================================== */
+
+.hidden {
+  display: none !important;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: hsla(0, 0%, 0%, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.modal {
+  background-color: hsl(39, 64%, 87%);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  width: min(90%, 420px);
+}
+
+.modal header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,0 +1,260 @@
+/* ==========================================================================
+   1. GLOBAL & BASE STYLES
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: hsl(39, 64%, 87%);
+  color: hsl(210, 75%, 16%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ==========================================================================
+   2. LAYOUT / CONTAINERS
+   ========================================================================== */
+
+.root-container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+main {
+  padding: 1rem 2rem;
+}
+
+main > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ==========================================================================
+   3. SIDEBAR / NAVIGATION
+   ========================================================================== */
+
+aside {
+  background-color: hsl(210, 75%, 16%);
+  min-height: 100vh;
+  color: hsl(39, 64%, 87%);
+  padding: 1rem;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+menu.sidebar-menu {
+  padding: 0;
+}
+
+.sidebar-menu li {
+  list-style-type: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.1rem;
+  font-size: 1rem;
+}
+
+.sidebar-menu li:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.sidebar-menu .selected {
+  background-color: hsl(39, 64%, 87%);
+  color: hsl(210, 75%, 16%);
+}
+
+/* ==========================================================================
+   4. BUTTONS
+   ========================================================================== */
+
+/* Base Button */
+.btn {
+  padding: 0.5rem 1rem;
+  border: solid 1px hsl(210, 75%, 16%);
+  border-radius: 0.2rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.btn:hover {
+  border: solid 1px hsl(210, 75%, 30%);
+  cursor: pointer;
+}
+
+/* Primary Button */
+.btn-primary {
+  background-color: hsl(26, 40%, 39%);
+  border: solid 1px hsl(26, 40%, 39%);
+  color: hsl(39, 64%, 87%);
+}
+
+.btn-primary:hover {
+  background-color: hsl(26, 33%, 30%);
+  border: solid 1px hsl(26, 33%, 30%);
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(26, 40%, 39%);
+  border: solid 1px hsl(26, 40%, 39%);
+}
+
+.btn-secondary:hover {
+  background-color: hsl(0, 0%, 93%);
+  border: solid 1px hsl(26, 33%, 30%);
+}
+
+/* Clear/Icon Button */
+.btn-clear {
+  border: none;
+  background-color: transparent;
+  color: hsl(26, 40%, 39%);
+  font-size: 1.5rem;
+}
+
+.btn-clear:hover {
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   5. CARDS & LISTS (Tasks & Summaries)
+   ========================================================================== */
+
+/* Task Lists */
+.task-list {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+ul.task-list {
+  padding: 0;
+}
+
+.task-list li {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Task Cards */
+.task-card {
+  background-color: hsl(39, 60%, 95%);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.2);
+  margin: 1rem;
+}
+
+.task-card header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-card p {
+  max-height: 5rem;
+  min-height: 5rem;
+  overflow: hidden;
+}
+
+.task-title {
+  margin: 0.75rem 0;
+}
+
+/* Summary Cards Dashboard */
+#summary-container {
+  margin-top: 1rem;
+  display: flex;
+  width: 100%;
+}
+
+.summary-card {
+  padding: 2rem;
+  margin: 0.5rem;
+  background-color: hsl(63, 19%, 79%);
+  border-radius: 0.2rem;
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.2);
+  flex-grow: 1;
+}
+
+/* ==========================================================================
+   6. DROPDOWN MENUS
+   ========================================================================== */
+
+.dropdown-content {
+  display: none; /* Hidden by default, toggled via JS or hover states */
+  background-color: hsl(39, 64%, 87%);
+  min-width: max-content;
+  right: 0;
+  top: 25px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.2);
+}
+
+.dropdown-content ul {
+  padding: 0;
+}
+
+.dropdown-content li {
+  padding: 0.2rem 1rem;
+  text-decoration: underline;
+}
+
+.dropdown-content li a {
+  color: hsl(210, 75%, 16%);
+}
+
+/* ==========================================================================
+   7. UTILITY CLASSES
+   ========================================================================== */
+
+.text-muted {
+  color: hsl(210, 10%, 40%);
+}
+
+.text-sm {
+  font-size: 0.75rem;
+}
+
+.text-lg {
+  font-size: 2em;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.show {
+  display: inline-block;
+}
