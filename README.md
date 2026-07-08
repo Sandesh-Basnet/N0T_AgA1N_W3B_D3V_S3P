@@ -1,23 +1,38 @@
 # N0T_AgA1N_W3B_D3V_S3P
 
-A collection of HTML and CSS practice exercises built from scratch. Each exercise focuses on a specific concept, starting from basic text markup and working up to the box model.
+Web development practice repository with static HTML/CSS/JS exercises and one React/Vite todo app.
 
-## Exercises
+## Repository structure
 
-| # | Topic | What I practiced |
-|---|-------|------------------|
-| 1 | Organizing Content | Structuring a resignation letter with headings, paragraphs, and address blocks using semantic HTML |
-| 2 | Lists | Building nested unordered lists and ordered lists for a packing list and daily schedule |
-| 3 | Navigation & Links | Creating a multi-page site with absolute links (Wikipedia) and relative links between pages, using header/nav/main/footer layout |
-| 4 | Images | Adding images with src, alt text, width and height attributes |
-| 5 | HTML Forms | Building a registration form with text inputs, select dropdown, radio buttons, checkboxes, file upload, and submit button |
-| 6 | Adding CSS | Applying CSS through inline styles, style tags, and external stylesheets. Experimented with selectors, cascade, !important, typography, and colors |
-| 7 | Box Model | Using the box model: global reset, display types, padding, margin, border, box-sizing, and centering content with auto margins |
+| Path | Purpose |
+|---|---|
+| `week_1/` | Introductory HTML/CSS exercises (including standalone exercise files and assets) |
+| `week_2/` | Intermediate layout/responsive/interactive exercises plus a vanilla JS todo app in `week_2/final/` |
+| `week_3/` | React learning materials (`task*.md`, screenshots, `answers/`) and final app in `week_3/todo-app-final/` |
+| `.github/copilot-instructions.md` | Repository-specific Copilot working instructions |
+| `sessions/` | Session notes/history files |
 
-## How to use
+## Running the projects
 
-Open any `index.html` or `.html` file directly in a browser. No server or build tools needed.
+### Static exercises (`week_1`, `week_2`)
+
+Open the relevant `.html` file directly in a browser.
+
+### React app (`week_3/todo-app-final`)
+
+```bash
+cd week_3/todo-app-final
+npm install
+npm run dev
+```
+
+Useful scripts:
+
+- `npm run build` — production build
+- `npm run preview` — preview built app
+- `npm run lint` — lint JS/JSX files
 
 ## Notes
 
-The `4SEWD-Web-Application-Development/` folder contains the original exercise templates. My solutions are in separate files and folders at the root level.
+- `week_1/4SEWD-Web-Application-Development/` is a separate embedded Git repository and should not be modified from this repo workflow.
+- There is currently no automated test suite configured in this repository.
