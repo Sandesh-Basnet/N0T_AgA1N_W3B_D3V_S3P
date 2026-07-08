@@ -9,8 +9,6 @@ Web development practice repository with static HTML/CSS/JS exercises and one Re
 | `week_1/` | Introductory HTML/CSS exercises (including standalone exercise files and assets) |
 | `week_2/` | Intermediate layout/responsive/interactive exercises plus a vanilla JS todo app in `week_2/final/` |
 | `week_3/` | React learning materials (`task*.md`, screenshots, `answers/`) and final app in `week_3/todo-app-final/` |
-| `.github/copilot-instructions.md` | Repository-specific Copilot working instructions |
-| `sessions/` | Session notes/history files |
 
 ## Running the projects
 
