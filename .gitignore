@@ -14,3 +14,14 @@ week_2/**/Example.png
 week_3/readme.md
 week_3/task*.md
 week_3/sc_*.png
+
+# Keep week_2 question sources local only (match week_1 pattern)
+week_2/1-Theme-With-CSS/
+week_2/2-Layouts-Flex-Grid/
+week_2/3-Positioning/
+week_2/4-Responsive-Design/
+week_2/5-Interactive-UI-JS/
+week_2/final/
+
+# Local scratch answers folder
+week_3/answers/
