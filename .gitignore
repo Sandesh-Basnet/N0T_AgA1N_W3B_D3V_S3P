@@ -16,6 +16,13 @@ week_3/task*.md
 week_4/task*.md
 week_3/sc_*.png
 
+# Keep week_5 question sources local only
+week_5/task*.md
+
+# Keep week_6 question sources local only
+week_6/task*.md
+week_6/readme.md
+
 # Keep week_2 question sources local only (match week_1 pattern)
 week_2/1-Theme-With-CSS/
 week_2/2-Layouts-Flex-Grid/
@@ -24,14 +31,6 @@ week_2/4-Responsive-Design/
 week_2/5-Interactive-UI-JS/
 week_2/final/
 
-# Local scratch answers folder
-week_3/answers/
-
 # Week 5 reference (coursework source)
 week_5/readme.md
 
-# Week 5 answers
-week_5/answers/
-
-# Week 6 answers
-week_6/answers/
